@@ -1,20 +1,20 @@
-# @gramio/crypto-pay-api
+# crypto-pay-api
 
-[![npm](https://img.shields.io/npm/v/@gramio/crypto-pay-api?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/@gramio/crypto-pay-api)
-[![npm downloads](https://img.shields.io/npm/dw/@gramio/crypto-pay-api?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/@gramio/crypto-pay-api)
-[![JSR](https://jsr.io/badges/@gramio/crypto-pay-api)](https://jsr.io/@gramio/crypto-pay-api)
-[![JSR Score](https://jsr.io/badges/@gramio/crypto-pay-api/score)](https://jsr.io/@gramio/crypto-pay-api)
+[![npm](https://img.shields.io/npm/v/crypto-pay-api?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/crypto-pay-api)
+[![npm downloads](https://img.shields.io/npm/dw/crypto-pay-api?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/crypto-pay-api)
+[![JSR](https://jsr.io/badges/crypto-pay-api)](https://jsr.io/crypto-pay-api)
+[![JSR Score](https://jsr.io/badges/crypto-pay-api/score)](https://jsr.io/crypto-pay-api)
 
 ## Installation
 
 ```bash
-npm install @gramio/crypto-pay-api
+npm install crypto-pay-api
 ```
 
 ## Usage
 
 ```ts
-import { CryptoPayAPI, webhookHandler } from "@gramio/crypto-pay-api";
+import { CryptoPayAPI, webhookHandler } from "crypto-pay-api";
 
 const api = new CryptoPayAPI("your-api-key");
 
