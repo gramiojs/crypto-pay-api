@@ -38,8 +38,8 @@ jobs:
             - name: Install modules
               run: bun install
 
-            - name: Prepare to JSR publish
-              run: bun scripts/prepare-jsr.ts
+            # - name: Prepare to JSR publish
+            #   run: bun scripts/prepare-jsr.ts
 
             - name: Type-check
               run: tsc --noEmit
