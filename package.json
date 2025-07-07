@@ -1,5 +1,5 @@
 {
-	"name": "crypto-pay-api",
+	"name": "@gramio/crypto-pay-api",
 	"version": "0.0.1",
 	"description": "CryptoPay / CryptoBot API client",
 	"keywords": [
