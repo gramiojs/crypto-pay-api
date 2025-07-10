@@ -16,10 +16,10 @@ npm install @gramio/crypto-pay-api
 ```ts
 import { CryptoPayAPI, webhookHandler } from "@gramio/crypto-pay-api";
 
-const api = new CryptoPayAPI("your-api-key");
+const api = new CryptoPayAPI("your-api-key", "testnet");
 
-api.on("invoice_paid", ({ payload }) => {
-    console.log(payload.amount, payload.payload);
+api.on("invoice_paid", ({ payload: invoice }) => {
+    console.log(invoice.amount, invoice.payload);
 });
 
 const me = await api.getMe();

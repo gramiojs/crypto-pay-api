@@ -282,7 +282,10 @@ export interface ApiError {
 	/** Indicates failure. Always false. */
 	ok: false;
 	/** Error code or message returned by the API. */
-	error: string;
+	error: {
+		code: number;
+		message: string;
+	};
 }
 
 /**

@@ -67,7 +67,9 @@ export class CryptoPayAPI {
 		const data = (await response.json()) as ApiResponse<T>;
 
 		if (!data.ok) {
-			throw new Error(`${method} failed: ${data.error}`);
+			throw new Error(
+				`${method} failed: ${data.error.code} - ${data.error.message}`,
+			);
 		}
 
 		return data.result;
@@ -85,7 +87,7 @@ export class CryptoPayAPI {
 		return true;
 	}
 
-	on(event: WebhookUpdateType, listener: (data: WebhookUpdate) => unknown) {
+	on(_event: WebhookUpdateType, listener: (data: WebhookUpdate) => unknown) {
 		this.listeners.push(listener);
 	}
 

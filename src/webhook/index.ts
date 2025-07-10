@@ -8,19 +8,21 @@ export function webhookHandler<Framework extends keyof typeof frameworks>(
 ) {
 	const frameworkAdapter = frameworks[framework];
 
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: cross-framework handler
 	return (async (...args: any[]) => {
-		const { body, response, getSignatureHeader } = frameworkAdapter(...args);
+		const { body, response, getSignatureHeader } = frameworkAdapter(
+			// @ts-expect-error
+			...args,
+		);
 
 		await client.emit((await body) as WebhookUpdate, getSignatureHeader());
 
 		if (response) return response();
 	}) as unknown as ReturnType<(typeof frameworks)[Framework]> extends {
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 		response: () => any;
 	}
 		? (
 				...args: Parameters<(typeof frameworks)[Framework]>
 			) => ReturnType<ReturnType<(typeof frameworks)[Framework]>["response"]>
-		: (...args: Parameters<(typeof frameworks)[Framework]>) => void;
+		: ReturnType<(typeof frameworks)[Framework]>["response"];
 }

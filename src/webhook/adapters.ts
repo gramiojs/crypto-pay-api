@@ -7,23 +7,12 @@ interface FrameworkHandler {
 	getSignatureHeader: () => string;
 }
 
-const HEADER_NAME = "X-Crypto-Pay-Signature";
+const HEADER_NAME = "crypto-pay-api-signature";
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 type FrameworkAdapter = (...args: any[]) => FrameworkHandler;
 
-// !Temporally fix slow types on JSR
-export const frameworks: Record<
-	| "http"
-	| "std/http"
-	| "Bun.serve"
-	| "elysia"
-	| "fastify"
-	| "hono"
-	| "express"
-	| "koa",
-	FrameworkAdapter
-> = {
+export const frameworks = {
 	elysia: ({ body, headers }) => ({
 		body,
 		response: () => new Response("OK"),
