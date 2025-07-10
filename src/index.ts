@@ -68,7 +68,7 @@ export class CryptoPayAPI {
 
 		if (!data.ok) {
 			throw new Error(
-				`${method} failed: ${data.error.code} - ${data.error.message}`,
+				`${method} failed: ${data.error.code} - ${data.error.name}`,
 			);
 		}
 

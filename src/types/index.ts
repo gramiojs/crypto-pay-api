@@ -284,7 +284,7 @@ export interface ApiError {
 	/** Error code or message returned by the API. */
 	error: {
 		code: number;
-		message: string;
+		name: string;
 	};
 }
 
